@@ -35,9 +35,9 @@
 <body>
     <h1>Rec Tropa da RT</h1>
     <form id="recForm">
-        <!-- SeÁ„o 1 -->
+        <!-- Se√ß√£o 1 -->
         <div class="form-section">
-            <h3>1. Qual È seu nÌvel?</h3>
+            <h3>1. Qual √© seu n√≠vel?</h3>
             <textarea id="nivel" rows="3" required></textarea>
         </div>
         <div class="form-section">
@@ -49,42 +49,42 @@
             <textarea id="motivo" rows="3" required></textarea>
         </div>
 
-        <!-- SeÁ„o 2 -->
+        <!-- Se√ß√£o 2 -->
         <div class="form-section">
-            <h3>1. Sabe a BÌblia RP?</h3>
+            <h3>1. Sabe a B√≠blia RP?</h3>
             <label><input type="radio" name="bibliaRp" value="Sim" required> Sim</label><br>
-            <label><input type="radio" name="bibliaRp" value="N„o"> N„o</label><br>
+            <label><input type="radio" name="bibliaRp" value="N√£o"> N√£o</label><br>
             <label><input type="radio" name="bibliaRp" value="Mais ou menos"> Mais ou menos</label>
         </div>
         <div class="form-section">
             <h3>2. Sabe obedecer ordens?</h3>
             <label><input type="radio" name="obedecer" value="Sim" required> Sim</label><br>
-            <label><input type="radio" name="obedecer" value="N„o"> N„o</label>
+            <label><input type="radio" name="obedecer" value="N√£o"> N√£o</label>
         </div>
 
-        <!-- SeÁ„o 3 -->
+        <!-- Se√ß√£o 3 -->
         <div class="form-section">
-            <h3>O que È RP?</h3>
+            <h3>O que √© RP?</h3>
             <textarea id="rp" rows="3" required></textarea>
         </div>
         <div class="form-section">
-            <h3>O que È DM?</h3>
+            <h3>O que √© DM?</h3>
             <textarea id="dm" rows="3" required></textarea>
         </div>
         <div class="form-section">
-            <h3>O que È VDM?</h3>
+            <h3>O que √© VDM?</h3>
             <textarea id="vdm" rows="3" required></textarea>
         </div>
         <div class="form-section">
-            <h3>O que È DB?</h3>
+            <h3>O que √© DB?</h3>
             <textarea id="db" rows="3" required></textarea>
         </div>
         <div class="form-section">
-            <h3>O que È PG?</h3>
+            <h3>O que √© PG?</h3>
             <textarea id="pg" rows="3" required></textarea>
         </div>
 
-        <!-- SeÁ„o 4 -->
+        <!-- Se√ß√£o 4 -->
         <div class="form-section">
             <h3>E-mail</h3>
             <input type="email" id="email" placeholder="Insira seu e-mail" required>
@@ -104,26 +104,26 @@
     <script>
         async function enviarFormulario() {
             const webhookUrl = "https://discord.com/api/webhooks/1316231023985557638/C7LIBn7tOWKQi9puH0eQxwfRcx6UkcStNE575_ZqiodYCxDvVJotu1AdrTcz6psrZjfl";
-
+            
             const data = {
                 content: "**Novo REC Tropa da RT:**",
                 embeds: [
                     {
-                        title: "InformaÁıes do Recrutamento",
+                        title: "Informa√ß√µes do Recrutamento",
                         fields: [
-                            { name: "Qual È seu nÌvel?", value: document.getElementById("nivel").value || "N„o informado" },
-                            { name: "Link da foto do RG", value: document.getElementById("fotoRg").value || "N„o informado" },
-                            { name: "Motivo de querer entrar para a FML", value: document.getElementById("motivo").value || "N„o informado" },
-                            { name: "Sabe a BÌblia RP?", value: document.querySelector('input[name="bibliaRp"]:checked')?.value || "N„o informado" },
-                            { name: "Sabe obedecer ordens?", value: document.querySelector('input[name="obedecer"]:checked')?.value || "N„o informado" },
-                            { name: "O que È RP?", value: document.getElementById("rp").value || "N„o informado" },
-                            { name: "O que È DM?", value: document.getElementById("dm").value || "N„o informado" },
-                            { name: "O que È VDM?", value: document.getElementById("vdm").value || "N„o informado" },
-                            { name: "O que È DB?", value: document.getElementById("db").value || "N„o informado" },
-                            { name: "O que È PG?", value: document.getElementById("pg").value || "N„o informado" },
-                            { name: "E-mail", value: document.getElementById("email").value || "N„o informado" },
-                            { name: "Telefone", value: document.getElementById("telefone").value || "N„o informado" },
-                            { name: "Nome Real", value: document.getElementById("nomeReal").value || "N„o informado" }
+                            { name: "Qual √© seu n√≠vel?", value: document.getElementById("nivel").value || "N√£o informado" },
+                            { name: "Link da foto do RG", value: document.getElementById("fotoRg").value || "N√£o informado" },
+                            { name: "Motivo de querer entrar para a FML", value: document.getElementById("motivo").value || "N√£o informado" },
+                            { name: "Sabe a B√≠blia RP?", value: document.querySelector('input[name="bibliaRp"]:checked')?.value || "N√£o informado" },
+                            { name: "Sabe obedecer ordens?", value: document.querySelector('input[name="obedecer"]:checked')?.value || "N√£o informado" },
+                            { name: "O que √© RP?", value: document.getElementById("rp").value || "N√£o informado" },
+                            { name: "O que √© DM?", value: document.getElementById("dm").value || "N√£o informado" },
+                            { name: "O que √© VDM?", value: document.getElementById("vdm").value || "N√£o informado" },
+                            { name: "O que √© DB?", value: document.getElementById("db").value || "N√£o informado" },
+                            { name: "O que √© PG?", value: document.getElementById("pg").value || "N√£o informado" },
+                            { name: "E-mail", value: document.getElementById("email").value || "N√£o informado" },
+                            { name: "Telefone", value: document.getElementById("telefone").value || "N√£o informado" },
+                            { name: "Nome Real", value: document.getElementById("nomeReal").value || "N√£o informado" }
                         ]
                     }
                 ]
@@ -137,9 +137,9 @@
                 });
 
                 if (response.ok) {
-                    alert("Formul·rio enviado com sucesso!");
+                    alert("Formul√°rio enviado com sucesso!");
                 } else {
-                    alert("Erro ao enviar formul·rio. Tente novamente.");
+                    alert("Erro ao enviar formul√°rio. Tente novamente.");
                 }
             } catch (error) {
                 alert("Erro ao conectar com o servidor.");
