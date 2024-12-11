@@ -5,242 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rec Tropa da RT</title>
     <style>
-        /* Corpo e layout */
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #4facfe, #00f2fe);
-            color: #333;
-        }
-
-        /* Menu */
-        .menu {
-            background-color: #007bff;
-            padding: 10px;
-            text-align: center;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .menu a {
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .menu a:hover {
-            color: #ffe135;
-        }
-
-        /* Container */
-        .container {
-            max-width: 900px;
-            margin: 60px auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        /* T√≠tulo */
-        h1 {
-            text-align: center;
-            background: linear-gradient(to right, #4facfe, #00f2fe);
-            color: white;
-            padding: 20px 0;
-            margin: 0;
-            font-size: 28px;
-        }
-
-        /* Se√ß√µes do formul√°rio */
-        .form-section {
+            font-family: Arial, sans-serif;
             margin: 20px;
-            padding: 20px;
-            border: 2px solid #007bff;
-            border-radius: 8px;
-            background: #f9f9f9;
-            animation: fadeIn 0.8s;
+            line-height: 1.6;
         }
-
-        .form-section h3 {
-            color: #444;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        textarea, input, select {
-            width: 100%;
+        .form-section {
+            margin-bottom: 20px;
             padding: 10px;
-            margin-top: 5px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 16px;
         }
-
-        textarea {
-            resize: none;
+        .form-section h3 {
+            margin-top: 0;
         }
-
-        label {
-            font-size: 16px;
-            display: block;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-
-        /* Bot√£o de enviar */
         button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            font-size: 18px;
+            padding: 10px 15px;
+            background-color: #007bff;
             color: white;
-            background: linear-gradient(to right, #4facfe, #00f2fe);
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, background 0.3s;
         }
-
         button:hover {
-            background: linear-gradient(to right, #00c6ff, #0072ff);
-            transform: scale(1.05);
-        }
-
-        /* Rodap√© */
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #555;
-            padding: 10px;
-            background: #007bff;
-            color: white;
-        }
-
-        /* Anima√ß√µes */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <!-- Menu -->
-    <div class="menu">
-        <a href="#seccao1">Informa√ß√µes B√°sicas</a>
-        <a href="#seccao2">Conhecimento RP</a>
-        <a href="#seccao3">Conceitos</a>
-        <a href="#seccao4">Informa√ß√µes Pessoais</a>
-    </div>
+    <h1>Rec Tropa da RT</h1>
+    <form id="recForm">
+        <!-- SeÁ„o 1 -->
+        <div class="form-section">
+            <h3>1. Qual È seu nÌvel?</h3>
+            <textarea id="nivel" rows="3" required></textarea>
+        </div>
+        <div class="form-section">
+            <h3>2. Link da foto do RG</h3>
+            <input type="url" id="fotoRg" placeholder="Insira o link da foto do RG" required>
+        </div>
+        <div class="form-section">
+            <h3>3. Motivo de querer entrar para a FML</h3>
+            <textarea id="motivo" rows="3" required></textarea>
+        </div>
 
-    <!-- Conte√∫do -->
-    <div class="container">
-        <h1>Recrutamento Tropa da RT</h1>
-        <form id="recForm">
-            <!-- Se√ß√£o 1 -->
-            <div class="form-section" id="seccao1">
-                <h3>1. Qual √© seu n√≠vel?</h3>
-                <textarea id="nivel" rows="3" required></textarea>
-            </div>
-            <div class="form-section">
-                <h3>2. Link da foto do RG</h3>
-                <input type="url" id="fotoRg" placeholder="Insira o link da foto do RG" required>
-            </div>
-            <div class="form-section">
-                <h3>3. Motivo de querer entrar para a FML</h3>
-                <textarea id="motivo" rows="3" required></textarea>
-            </div>
+        <!-- SeÁ„o 2 -->
+        <div class="form-section">
+            <h3>1. Sabe a BÌblia RP?</h3>
+            <label><input type="radio" name="bibliaRp" value="Sim" required> Sim</label><br>
+            <label><input type="radio" name="bibliaRp" value="N„o"> N„o</label><br>
+            <label><input type="radio" name="bibliaRp" value="Mais ou menos"> Mais ou menos</label>
+        </div>
+        <div class="form-section">
+            <h3>2. Sabe obedecer ordens?</h3>
+            <label><input type="radio" name="obedecer" value="Sim" required> Sim</label><br>
+            <label><input type="radio" name="obedecer" value="N„o"> N„o</label>
+        </div>
 
-            <!-- Se√ß√£o 2 -->
-            <div class="form-section" id="seccao2">
-                <h3>1. Sabe a B√≠blia RP?</h3>
-                <label><input type="radio" name="bibliaRp" value="Sim" required> Sim</label>
-                <label><input type="radio" name="bibliaRp" value="N√£o"> N√£o</label>
-                <label><input type="radio" name="bibliaRp" value="Mais ou menos"> Mais ou menos</label>
-            </div>
-            <div class="form-section">
-                <h3>2. Sabe obedecer ordens?</h3>
-                <label><input type="radio" name="obedecer" value="Sim" required> Sim</label>
-                <label><input type="radio" name="obedecer" value="N√£o"> N√£o</label>
-            </div>
+        <!-- SeÁ„o 3 -->
+        <div class="form-section">
+            <h3>O que È RP?</h3>
+            <textarea id="rp" rows="3" required></textarea>
+        </div>
+        <div class="form-section">
+            <h3>O que È DM?</h3>
+            <textarea id="dm" rows="3" required></textarea>
+        </div>
+        <div class="form-section">
+            <h3>O que È VDM?</h3>
+            <textarea id="vdm" rows="3" required></textarea>
+        </div>
+        <div class="form-section">
+            <h3>O que È DB?</h3>
+            <textarea id="db" rows="3" required></textarea>
+        </div>
+        <div class="form-section">
+            <h3>O que È PG?</h3>
+            <textarea id="pg" rows="3" required></textarea>
+        </div>
 
-            <!-- Se√ß√£o 3 -->
-            <div class="form-section" id="seccao3">
-                <h3>O que √© RP?</h3>
-                <textarea id="rp" rows="3" required></textarea>
-            </div>
-            <div class="form-section">
-                <h3>O que √© DM?</h3>
-                <textarea id="dm" rows="3" required></textarea>
-            </div>
-            <div class="form-section">
-                <h3>O que √© VDM?</h3>
-                <textarea id="vdm" rows="3" required></textarea>
-            </div>
-            <div class="form-section">
-                <h3>O que √© DB?</h3>
-                <textarea id="db" rows="3" required></textarea>
-            </div>
-            <div class="form-section">
-                <h3>O que √© PG?</h3>
-                <textarea id="pg" rows="3" required></textarea>
-            </div>
+        <!-- SeÁ„o 4 -->
+        <div class="form-section">
+            <h3>E-mail</h3>
+            <input type="email" id="email" placeholder="Insira seu e-mail" required>
+        </div>
+        <div class="form-section">
+            <h3>Telefone</h3>
+            <input type="tel" id="telefone" placeholder="Insira seu telefone" required>
+        </div>
+        <div class="form-section">
+            <h3>Nome Real</h3>
+            <input type="text" id="nomeReal" placeholder="Insira seu nome real" required>
+        </div>
 
-            <!-- Se√ß√£o 4 -->
-            <div class="form-section" id="seccao4">
-                <h3>E-mail</h3>
-                <input type="email" id="email" placeholder="Insira seu e-mail" required>
-            </div>
-            <div class="form-section">
-                <h3>Telefone</h3>
-                <input type="tel" id="telefone" placeholder="Insira seu telefone" required>
-            </div>
-            <div class="form-section">
-                <h3>Nome Real</h3>
-                <input type="text" id="nomeReal" placeholder="Insira seu nome real" required>
-            </div>
-
-            <button type="button" onclick="enviarFormulario()">Enviar REC</button>
-        </form>
-        <footer>
-            Desenvolvido com üíô para a Tropa da RT
-        </footer>
-    </div>
+        <button type="button" onclick="enviarFormulario()">Enviar REC</button>
+    </form>
 
     <script>
         async function enviarFormulario() {
-            const webhookUrl = "https://discord.com/api/webhooks/1288980879397621791/iK325TYN4nvqY4Pls61Uq6K1hP-t2vEQn77Qvif29SVClz0b-CWVjpqHyEZf_LAhiZIa";
+            const webhookUrl = "https://discord.com/api/webhooks/1316231023985557638/C7LIBn7tOWKQi9puH0eQxwfRcx6UkcStNE575_ZqiodYCxDvVJotu1AdrTcz6psrZjfl";
 
             const data = {
                 content: "**Novo REC Tropa da RT:**",
                 embeds: [
                     {
-                        title: "Informa√ß√µes do Recrutamento",
+                        title: "InformaÁıes do Recrutamento",
                         fields: [
-                            { name: "NIVEL?", value: document.getElementById("nivel").value || "N√£o informado" },
-                            { name: "RG", value: document.getElementById("fotoRg").value || "N√£o informado" },
-                            { name: "Motivo de querer entrar para a FML", value: document.getElementById("motivo").value || "N√£o informado" },
-                            { name: "Sabe a B√≠blia RP?", value: document.querySelector('input[name="bibliaRp"]:checked')?.value || "N√£o informado" },
-                            { name: "Sabe obedecer ordens?", value: document.querySelector('input[name="obedecer"]:checked')?.value || "N√£o informado" },
-                            { name: "O que √© RP?", value: document.getElementById("rp").value || "N√£o informado" },
-                            { name: "O que √© DM?", value: document.getElementById("dm").value || "N√£o informado" },
-                            { name: "O que √© VDM?", value: document.getElementById("vdm").value || "N√£o informado" },
-                            { name: "O que √© DB?", value: document.getElementById("db").value || "N√£o informado" },
-                            { name: "O que √© PG?", value: document.getElementById("pg").value || "N√£o informado" },
-                            { name: "E-mail", value: document.getElementById("email").value || "N√£o informado" },
-                            { name: "Telefone", value: document.getElementById("telefone").value || "N√£o informado" },
-                            { name: "Nome Real", value: document.getElementById("nomeReal").value || "N√£o informado" }
+                            { name: "Qual È seu nÌvel?", value: document.getElementById("nivel").value || "N„o informado" },
+                            { name: "Link da foto do RG", value: document.getElementById("fotoRg").value || "N„o informado" },
+                            { name: "Motivo de querer entrar para a FML", value: document.getElementById("motivo").value || "N„o informado" },
+                            { name: "Sabe a BÌblia RP?", value: document.querySelector('input[name="bibliaRp"]:checked')?.value || "N„o informado" },
+                            { name: "Sabe obedecer ordens?", value: document.querySelector('input[name="obedecer"]:checked')?.value || "N„o informado" },
+                            { name: "O que È RP?", value: document.getElementById("rp").value || "N„o informado" },
+                            { name: "O que È DM?", value: document.getElementById("dm").value || "N„o informado" },
+                            { name: "O que È VDM?", value: document.getElementById("vdm").value || "N„o informado" },
+                            { name: "O que È DB?", value: document.getElementById("db").value || "N„o informado" },
+                            { name: "O que È PG?", value: document.getElementById("pg").value || "N„o informado" },
+                            { name: "E-mail", value: document.getElementById("email").value || "N„o informado" },
+                            { name: "Telefone", value: document.getElementById("telefone").value || "N„o informado" },
+                            { name: "Nome Real", value: document.getElementById("nomeReal").value || "N„o informado" }
                         ]
                     }
                 ]
@@ -254,9 +137,9 @@
                 });
 
                 if (response.ok) {
-                    alert("Formul√°rio enviado com sucesso!");
+                    alert("Formul·rio enviado com sucesso!");
                 } else {
-                    alert("Erro ao enviar formul√°rio. Tente novamente.");
+                    alert("Erro ao enviar formul·rio. Tente novamente.");
                 }
             } catch (error) {
                 alert("Erro ao conectar com o servidor.");
