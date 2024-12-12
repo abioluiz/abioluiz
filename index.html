@@ -1,150 +1,252 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rec Tropa da RT</title>
+    <title>Recrutamento</title>
     <style>
+        /* Estilos globais */
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);
+            color: #fff;
+            text-align: center;
+            min-height: 100vh;
+        }
+        h1, h2 {
+            background: linear-gradient(90deg, #ff6f91, #ff9671, #ffc75f);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 2.5em;
             margin: 20px;
-            line-height: 1.6;
         }
-        .form-section {
-            margin-bottom: 20px;
+        h2 {
+            font-size: 2em;
+        }
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+        label {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 80%;
             padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 1em;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        .form-section h3 {
-            margin-top: 0;
+        input, select {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
         }
         button {
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: #fff;
+            font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
         }
         button:hover {
-            background-color: #0056b3;
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+        }
+        #timer {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
-    <h1>Rec Tropa da RT</h1>
-    <form id="recForm">
-        <!-- Se��o 1 -->
-        <div class="form-section">
-            <h3>1. Qual � seu n�vel?</h3>
-            <textarea id="nivel" rows="3" required></textarea>
+    <h1>RECRUTAMENTO PESSOAL</h1>
+
+    <form id="recrutamentoForm">
+        <div class="question">
+            <label>1. Qual seu nível?</label><br>
+            <input type="text" id="nivel" placeholder="Digite seu nível..." required>
         </div>
-        <div class="form-section">
-            <h3>2. Link da foto do RG</h3>
-            <input type="url" id="fotoRg" placeholder="Insira o link da foto do RG" required>
+        <div class="question">
+            <label>2. Seu RG?</label><br>
+            <input type="text" id="rg" placeholder="Digite seu RG..." required>
         </div>
-        <div class="form-section">
-            <h3>3. Motivo de querer entrar para a FML</h3>
-            <textarea id="motivo" rows="3" required></textarea>
+        <div class="question">
+            <label>3. Seu nome real?</label><br>
+            <input type="text" id="nomeReal" placeholder="Digite seu nome real..." required>
+        </div>
+        <div class="question">
+            <label>4. Seu nome do Discord?</label><br>
+            <input type="text" id="nomeDiscord" placeholder="Digite seu nome do Discord..." required>
+        </div>
+        <div class="question">
+            <label>5. Seu número do WhatsApp?</label><br>
+            <input type="text" id="zap" placeholder="Digite seu número do WhatsApp..." required>
+        </div>
+        <div class="question">
+            <label>6. Sabe a Bíblia RP?</label><br>
+            <select id="sabeBiblia" required>
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+        </div>
+        <div class="question">
+            <label>7. Sabe obedecer ordens?</label><br>
+            <select id="sabeOrdem" required>
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
         </div>
 
-        <!-- Se��o 2 -->
-        <div class="form-section">
-            <h3>1. Sabe a B�blia RP?</h3>
-            <label><input type="radio" name="bibliaRp" value="Sim" required> Sim</label><br>
-            <label><input type="radio" name="bibliaRp" value="N�o"> N�o</label><br>
-            <label><input type="radio" name="bibliaRp" value="Mais ou menos"> Mais ou menos</label>
-        </div>
-        <div class="form-section">
-            <h3>2. Sabe obedecer ordens?</h3>
-            <label><input type="radio" name="obedecer" value="Sim" required> Sim</label><br>
-            <label><input type="radio" name="obedecer" value="N�o"> N�o</label>
-        </div>
-
-        <!-- Se��o 3 -->
-        <div class="form-section">
-            <h3>O que � RP?</h3>
-            <textarea id="rp" rows="3" required></textarea>
-        </div>
-        <div class="form-section">
-            <h3>O que � DM?</h3>
-            <textarea id="dm" rows="3" required></textarea>
-        </div>
-        <div class="form-section">
-            <h3>O que � VDM?</h3>
-            <textarea id="vdm" rows="3" required></textarea>
-        </div>
-        <div class="form-section">
-            <h3>O que � DB?</h3>
-            <textarea id="db" rows="3" required></textarea>
-        </div>
-        <div class="form-section">
-            <h3>O que � PG?</h3>
-            <textarea id="pg" rows="3" required></textarea>
-        </div>
-
-        <!-- Se��o 4 -->
-        <div class="form-section">
-            <h3>E-mail</h3>
-            <input type="email" id="email" placeholder="Insira seu e-mail" required>
-        </div>
-        <div class="form-section">
-            <h3>Telefone</h3>
-            <input type="tel" id="telefone" placeholder="Insira seu telefone" required>
-        </div>
-        <div class="form-section">
-            <h3>Nome Real</h3>
-            <input type="text" id="nomeReal" placeholder="Insira seu nome real" required>
-        </div>
-
-        <button type="button" onclick="enviarFormulario()">Enviar REC</button>
+        <button type="button" onclick="avancar()">AVANÇAR</button>
     </form>
 
-    <script>
-        async function enviarFormulario() {
-            const webhookUrl = "https://discord.com/api/webhooks/1316231023985557638/C7LIBn7tOWKQi9puH0eQxwfRcx6UkcStNE575_ZqiodYCxDvVJotu1AdrTcz6psrZjfl";
+    <div id="quizSection" style="display: none;">
+        <h2>BÍBLIA RP BÁSICA</h2>
+        <div id="timer">Tempo Restante: 3:00</div>
+        <div class="question">
+            <label>1. O que é DM?</label><br>
+            <select id="dm">
+                <option value="">Selecione</option>
+                <option value="certo">ᴍᴀᴛᴀʀ ᴏᴜ ʙᴀᴛᴇʀ ᴇᴍ ᴀʟɢᴜᴇᴍ sᴇᴍ ᴍᴏᴛɪᴠᴏ</option>
+                <option value="errado1">Matar sem motivo</option>
+                <option value="errado2">Atropelar com motivo</option>
+            </select>
+        </div>
+        <div class="question">
+            <label>2. O que é CJ?</label><br>
+            <select id="cj">
+                <option value="">Selecione</option>
+                <option value="certo">ʀᴏᴜʙᴀʀ ᴠᴇɪᴄᴜʟᴏ ᴛɪʀᴀɴᴅᴏ ᴀʟɢᴜᴇᴍ ᴅᴏ ᴘ1</option>
+                <option value="errado1">Roubar carro com amigos</option>
+                <option value="errado2">Assaltar solo</option>
+            </select>
+        </div>
+        <div class="question">
+            <label>3. O que é PG?</label><br>
+            <select id="pg">
+                <option value="">Selecione</option>
+                <option value="certo">ғᴏʀᴄᴀʀ ʀᴘ</option>
+                <option value="errado1">Roubar sem regras</option>
+                <option value="errado2">Atropelar com motivo</option>
+            </select>
+        </div>
+        <div class="question">
+            <label>4. O que é VDM?</label><br>
+            <select id="vdm">
+                <option value="">Selecione</option>
+                <option value="certo">ᴍᴀᴛᴀʀ ᴏᴜ ᴀᴛʀᴏᴘᴇʟᴀʀ sᴇᴍ ᴍᴏᴛɪᴠᴏ</option>
+                <option value="errado1">Atropelar com motivo</option>
+                <option value="errado2">Matar amigos</option>
+            </select>
+        </div>
+        <div class="question">
+            <label>5. O que é RP?</label><br>
+            <select id="rp">
+                <option value="">Selecione</option>
+                <option value="certo">ᴀᴛᴜᴀʀ ᴄᴏᴍᴏ ɴᴀ ᴠɪᴅᴀ ʀᴇᴀʟ ᴅᴇɴᴛʀᴏ ᴅᴏ ᴊᴏɢᴏ</option>
+                <option value="errado1">Fazer qualquer coisa</option>
+                <option value="errado2">Atuar sem regras</option>
+            </select>
+        </div>
+        <h2>BÍBLIA RP AVANÇADA</h2>
+        <div class="question">
+            <label>6. O que é RDM?</label><br>
+            <select id="rdm">
+                <option value="">Selecione</option>
+                <option value="certo">ᴍᴀᴛᴀʀ ᴘᴇssᴏᴀs ᴀʟᴇᴀᴛᴏʀɪᴀs sᴇᴍ ᴍᴏᴛɪᴠᴏ</option>
+                <option value="errado1">Matar amigos</option>
+                <option value="errado2">Matar sem motivo</option>
+            </select>
+        </div>
+        <div class="question">
+            <label>7. O que é NS?</label><br>
+            <select id="ns">
+                <option value="">Selecione</option>
+                <option value="certo">sem cuidado</option>
+                <option value="errado1">sᴇᴍ ᴀᴍᴏʀ ᴀ ᴠɪᴅᴀ</option>
+                <option value="errado2">Bugando regras</option>
+            </select>
+        </div>
 
-            const data = {
-                content: "**Novo REC Tropa da RT:**",
-                embeds: [
-                    {
-                        title: "Informa��es do Recrutamento",
-                        fields: [
-                            { name: "Qual � seu n�vel?", value: document.getElementById("nivel").value || "N�o informado" },
-                            { name: "Link da foto do RG", value: document.getElementById("fotoRg").value || "N�o informado" },
-                            { name: "Motivo de querer entrar para a FML", value: document.getElementById("motivo").value || "N�o informado" },
-                            { name: "Sabe a B�blia RP?", value: document.querySelector('input[name="bibliaRp"]:checked')?.value || "N�o informado" },
-                            { name: "Sabe obedecer ordens?", value: document.querySelector('input[name="obedecer"]:checked')?.value || "N�o informado" },
-                            { name: "O que � RP?", value: document.getElementById("rp").value || "N�o informado" },
-                            { name: "O que � DM?", value: document.getElementById("dm").value || "N�o informado" },
-                            { name: "O que � VDM?", value: document.getElementById("vdm").value || "N�o informado" },
-                            { name: "O que � DB?", value: document.getElementById("db").value || "N�o informado" },
-                            { name: "O que � PG?", value: document.getElementById("pg").value || "N�o informado" },
-                            { name: "E-mail", value: document.getElementById("email").value || "N�o informado" },
-                            { name: "Telefone", value: document.getElementById("telefone").value || "N�o informado" },
-                            { name: "Nome Real", value: document.getElementById("nomeReal").value || "N�o informado" }
-                        ]
-                    }
-                ]
+        <button type="button" onclick="enviar()">ENVIAR FORM</button>
+    </div>
+
+    <script>
+        let timer = 120 // 3 minutos
+        let interval;
+
+        function avancar() {
+            document.getElementById("recrutamentoForm").style.display = "none";
+            document.getElementById("quizSection").style.display = "block";
+            startTimer();
+        }
+
+        function startTimer() {
+            const timerElement = document.getElementById("timer");
+            interval = setInterval(() => {
+                const minutes = Math.floor(timer / 60);
+                const seconds = timer % 60;
+                timerElement.innerText = `Tempo Restante: ${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+                timer--;
+                if (timer <= 0) {
+                    clearInterval(interval);
+                    alert("Tempo esgotado! Você foi reprovado.");
+                }
+            }, 1000);
+        }
+
+        function enviar() {
+            clearInterval(interval);
+
+            const respostasCertas = {
+                dm: "certo",
+                cj: "certo",
+                pg: "certo",
+                vdm: "certo",
+                rp: "certo",
+                rdm: "certo",
+                ns: "certo",
             };
 
-            try {
-                const response = await fetch(webhookUrl, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(data)
-                });
+            let acertos = 0;
 
-                if (response.ok) {
-                    alert("Formul�rio enviado com sucesso!");
-                } else {
-                    alert("Erro ao enviar formul�rio. Tente novamente.");
-                }
-            } catch (error) {
-                alert("Erro ao conectar com o servidor.");
-                console.error(error);
+            for (let key in respostasCertas) {
+                const resposta = document.getElementById(key).value;
+                if (resposta === respostasCertas[key]) acertos++;
             }
+
+            const nomeReal = document.getElementById("nomeReal").value;
+            const rg = document.getElementById("rg").value;
+            const zap = document.getElementById("zap").value;
+            const nomeDiscord = document.getElementById("nomeDiscord").value;
+
+            const resultado = acertos >= 6 ? "APROVADO" : "REPROVADO";
+
+            fetch('https://discord.com/api/webhooks/1316231023985557638/C7LIBn7tOWKQi9puH0eQxwfRcx6UkcStNE575_ZqiodYCxDvVJotu1AdrTcz6psrZjfl', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    content: `**Resultado do Recrutamento**
+**Nome Real:** ${nomeReal}
+**RG:** ${rg}
+**WhatsApp:** ${zap}
+**Discord:** ${nomeDiscord}
+**Acertos:** ${acertos}/7
+**Status:** ${resultado}`,
+                }),
+            }).then(() => alert("Enviado Rec!"))
+              .catch(err => alert("Erro ao enviar para o Rec tente novalmente " + err));
         }
     </script>
 </body>
